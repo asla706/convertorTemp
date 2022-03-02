@@ -1,43 +1,43 @@
 document.getElementById('calculo').onclick = converter;
-var valor, valorC, valorF, valorK, valorR, opcao
+var temp, tempC, tempF, tempK, tempR, select
 function converter(){
-    valor = document.getElementById('valor').value;
-    opcao = document.getElementById('opções').value;
-    if(opcao=='celsius'){
-        valorF = (parseFloat(valor)*1.8)+32;
-        valorK = (parseFloat(valor)+273.15)
-        valorR = (parseFloat(valor)+273.15)*1.8;
+    temp = document.getElementById('valor').value;
+    select = document.getElementById('opções').value;
+    if(select=='celsius'){
+        tempF = (parseFloat(temp)*1.8)+32;
+        tempK = (parseFloat(temp)+273.15)
+        tempR = (parseFloat(temp)+273.15)*1.8;
         document.getElementById('cels').style.display = "none";
         document.getElementById('kelv').style.display = "block";
         document.getElementById('fahr').style.display = "block";
         document.getElementById('rank').style.display = "block";
-    } else if(opcao=='fahrenheit'){
-        valorC = (parseFloat(valor)-32)/1.8;
-        valorK = parseFloat(valor-32)*(5/9) +273;
-        valorR = (parseFloat(valor)+459.67);
+    } else if(select=='fahrenheit'){
+        tempC = (parseFloat(temp)-32)/1.8;
+        tempK = parseFloat(temp-32)*(5/9) +273;
+        tempR = (parseFloat(temp)+459.67);
         document.getElementById('cels').style.display = "block";
         document.getElementById('fahr').style.display = "none";
         document.getElementById('kelv').style.display = "block";
         document.getElementById('rank').style.display = "block";
-    }else if(opcao=='kelvin'){
-        valorC = (parseFloat(valor)-273);
-        valorF = ((parseFloat(valor)-273)*1.8)+32;
-        valorR = (parseFloat(valor)*1.8)
+    }else if(select=='kelvin'){
+        tempC = (parseFloat(temp)-273);
+        tempF = ((parseFloat(temp)-273)*1.8)+32;
+        tempR = (parseFloat(temp)*1.8)
         document.getElementById('cels').style.display = "block";
         document.getElementById('fahr').style.display = "block";
         document.getElementById('kelv').style.display = "none";
         document.getElementById('rank').style.display = "block";
-    }else if(opcao=='rankine'){
-        valorC = (parseFloat(valor)/8)-273.15;
-        valorF = (parseFloat(valor)-459.67);
-        valorK = (parseFloat(valor)/1.8);
+    }else if(select=='rankine'){
+        tempC = (parseFloat(temp)/8)-273.15;
+        tempF = (parseFloat(temp)-459.67);
+        tempK = (parseFloat(temp)/1.8);
         document.getElementById('cels').style.display = "block";
         document.getElementById('fahr').style.display = "block";
         document.getElementById('kelv').style.display = "block";
         document.getElementById('rank').style.display = "none";
     }   
-    document.getElementById("fahr").innerHTML = parseFloat(valorF).toFixed(2) +" °F";
-    document.getElementById("cels").innerHTML = parseFloat(valorC).toFixed(2) +" °C";
-    document.getElementById("kelv").innerHTML = parseFloat(valorK).toFixed(2)+" K";
-    document.getElementById("rank").innerHTML = parseFloat(valorR).toFixed(2)+" °R";
+    document.getElementById("fahr").innerHTML = parseFloat(tempF).toFixed(2) +" °F";
+    document.getElementById("cels").innerHTML = parseFloat(tempC).toFixed(2) +" °C";
+    document.getElementById("kelv").innerHTML = parseFloat(tempK).toFixed(2)+" K";
+    document.getElementById("rank").innerHTML = parseFloat(tempR).toFixed(2)+" °R";
 }
